@@ -1,0 +1,45 @@
+  <!-- navbar -->
+  <div data-ng-include=" 'tpl/blocks/header.html' " class="app-header navbar">
+  </div>
+  <!-- / navbar -->
+
+  <!-- menu -->
+  <div data-ng-include=" 'tpl/blocks/aside.html' " class="app-aside hidden-xs {{app.settings.asideColor}}">
+  </div>
+  <!-- / menu -->
+
+  <!-- content -->
+  <div class="app-content">
+    <div ui-butterbar></div>
+    <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside" ></a>
+    <div class="app-content-body fade-in-up" ui-view></div>
+  </div>
+  <!-- /content -->
+
+  <!-- aside right -->
+  <div ng-controller="dataResultCtrl" class="app-aside-right pos-fix no-padder  w-xxl w-auto-xs bg-white b-l animated {{resultShowState}}">
+    <div class="vbox">
+      <div class="wrapper b-b b-t b-light m-b">
+        <a href class="pull-right text-muted text-md" ui-toggle-class="hide" target=".app-aside-right" ng-click="resultShowStateChange()"><i class="icon-close"></i></a>
+        数据结果
+      </div>
+      <div class="row-row">
+        <div class="cell">
+          <div class="cell-inner padder">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- / aside right -->
+
+  <!-- footer -->
+  <!--<div class="app-footer wrapper b-t bg-light">-->
+    <!--<span class="pull-right">{{app.version}} <a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>-->
+    <!--&copy; 2015 Copyright.-->
+  <!--</div>-->
+  <!-- / footer -->
+
+  <div data-ng-include=" 'tpl/blocks/settings.html' " class="settings panel panel-default">
+  </div>

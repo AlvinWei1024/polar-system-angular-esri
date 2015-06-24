@@ -1,0 +1,12 @@
+.map-logo-false{
+    height: 50px;
+    width: 100px;
+    max-height: 50px!important;
+    padding: 0px;
+}
+.map-logo-true{
+    height: 30px;
+    width: 60px;
+    max-height: 30px!important;
+    padding: 0px;
+}

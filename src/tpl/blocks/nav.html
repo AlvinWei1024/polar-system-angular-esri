@@ -1,0 +1,48 @@
+<!-- list -->
+<ul class="nav" ng-controller="navCtrl">
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span>专项专题</span>
+    </li>
+    <li class="" ng-repeat="rootNavData in navData" ui-sref-active="{{rootNavData.selected?active:null}}">
+        <a class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon {{rootNavData.icon}} icon text-primary-dker"></i>
+            <span class="font-bold" >{{rootNavData.name}}</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>{{rootNavData.name}}</span>
+                </a>
+            </li>
+            <li ng-repeat="navData in rootNavData.child" ui-sref-active="{{navData.selected?active:' '}}">
+                <a class="auto">
+                    <span class="pull-right text-muted">
+                        <i class="fa fa-fw fa-angle-right text"></i>
+                        <i class="fa fa-fw fa-angle-down text-active"></i>
+                    </span>
+                    <i class="glyphicon {{navData.icon}} icon text-primary-dker"></i>
+                    <span class="font-bold1" >{{navData.name}}</span>
+                </a>
+                <ul class="nav nav-sub lt">
+                    <li class="nav-sub-header">
+                        <a href>
+                            <span>{{navData.name}}</span>
+                        </a>
+                    </li>
+                    <li ng-repeat="subNavData in navData.child" ui-sref-active="{{subNavData.selected?active:' '}}">
+                        <a ng-click="subNavData.selected=!subNavData.selected">
+                            <label class="i-checks m-b-none"><input type="checkbox" name=" " ng-model="subNavData.selected"><i></i></label>
+                            <span>{{subNavData.name}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="line dk"></li>
+</ul>
+<!-- / list -->

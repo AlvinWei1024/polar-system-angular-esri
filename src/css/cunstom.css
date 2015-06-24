@@ -1,0 +1,91 @@
+.app-content-body {
+    float: left;
+    width: 100%;
+    padding-bottom:0;
+}
+.map-logo-false{
+    height: 50px;
+    width: 100px;
+    max-height: 50px!important;
+    padding: 0px;
+}
+.map-logo-true{
+    height: 30px;
+    width: 60px;
+    max-height: 30px!important;
+    padding: 0px;
+}
+.nav-logo > a, .nav-logo > a{
+    padding: 0px;
+    margin: 0px;
+}
+ ul.nav > li > a.auto {
+    padding: 10px;
+}
+ul.nav > li > ul.nav > li > a.auto {
+    margin-left: 0px;
+}
+@media (min-width: 768px) {
+    .app-aside,
+    .navbar-header {
+    width: 325px;
+    }
+    .navbar-collapse,
+    .app-content,
+    .app-footer {
+    margin-left: 325px;
+    }
+}
+.input-group{
+    /*width: 300px;*/
+}
+
+
+@media (min-width: 768px) {
+    .app-aside-folded .navi > ul > li > ul {
+        position: absolute;
+        top: 0 !important;
+        left: 100%;
+        z-index: 1050;
+        width: 200px;
+        height: auto !important;
+        -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+    .active > .nav-sub,
+    .app-aside-folded li:hover > .nav-sub,
+    .app-aside-folded li:focus > .nav-sub,
+    .app-aside-folded li:active > .nav-sub {
+        height: auto !important;
+        margin-left: 0;
+        overflow: visible!important;
+        opacity: 1;
+        display: block;
+    }
+
+    .app-aside-folded .active > .nav-sub > li:hover > .nav-sub,
+    .app-aside-folded .app-aside-folded ul>li:hover >ul > li:hover > .nav-sub,
+    .app-aside-folded .app-aside-folded ul>li:focus >ul > li:focus > .nav-sub,
+    .app-aside-folded .app-aside-folded ul>li:active >ul > li:active > .nav-sub {
+        height: auto !important;
+        margin-left: 0;
+        /*overflow: auto;*/
+        display: block;
+        opacity: 1;
+    }
+    .app-aside-folded .navi > ul > li > ul > li > ul{
+        position: absolute;
+        top: 0 !important;
+        display: none;
+        left: 100%;
+        z-index: 105;
+        width: 200px;
+        /*height: 0 !important;*/
+        -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .app-aside-folded .navi ul.nav li li:hover > ul {
+        display: block;
+    }
+}
