@@ -96,7 +96,6 @@
         return {
             // element only
             restrict: 'E',
-
             // isolate scope
             scope: {
                 // two-way binding for center/zoom
@@ -110,13 +109,13 @@
                 load: '&',
                 extentChange: '&'
             },
-
             // replace tag with div with same id
             compile: function($element, $attrs) {
                 // remove the id attribute from the main element
                 $element.removeAttr('id');
 
                 // append a new div inside this element, this is where we will create our map
+
                 var elementString='<div id=' + $attrs.id + ' style="height:'+$attrs.mapheight+'px"></div>';
                 $element.append(elementString);
                 // since we are using compile we need to return our linker function
@@ -125,7 +124,6 @@
                 return function(scope, element, attrs, controller) {
                 };
             },
-
             // directive api
             controller: function($scope, $element, $attrs) {
                 // only do this once per directive
@@ -240,8 +238,13 @@
                         });
 
                         // initialize map and resolve the deferred
-                        var map = new Map($attrs.id, mapOptions);
-                        mapDeferred.resolve(map);
+                        var map ;
+                        setTimeout(function(){
+                            map= new Map($attrs.id, mapOptions);
+                            mapDeferred.resolve(map);
+                        },500)
+
+
                     }
 
                     mapDeferred.promise.then(function(map)
