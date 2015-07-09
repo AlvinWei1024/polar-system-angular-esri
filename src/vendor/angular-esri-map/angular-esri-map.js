@@ -239,10 +239,10 @@
 
                         // initialize map and resolve the deferred
                         var map ;
-                        setTimeout(function(){
+                        $timeout(function(){
                             map= new Map($attrs.id, mapOptions);
                             mapDeferred.resolve(map);
-                        },500)
+                        },0)
 
 
                     }

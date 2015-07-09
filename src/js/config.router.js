@@ -31,8 +31,9 @@ angular.module('app')
                           function( uiLoad,$ocLazyLoad){
                               //return $ocLazyLoad.load('js/app/map/map-controller.js');
                               return uiLoad.load( [
-                                  'js/controllers/map-controller.js'
-                                  //,'js/app/map/load-polar-map.js'
+                                  //'js/services/esri.map.js'
+                                  ,'js/controllers/map-controller.js'
+                                  ,'js/controllers/map.option.controller.js'
                                   ]).then(
                                   function(){
                                       //return $ocLazyLoad.load('js/app/map/load-map-controller.js');
