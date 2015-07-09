@@ -42,6 +42,48 @@
         <!-- / search form -->
 
         <!-- nabar right -->
+          <ul class="nav navbar-nav navbar-right" ng-controller="mapOptionCtrl">
+              <li class="hidden-xs">
+                  <a ng-click="" title="123">
+                      <i class="icon icon-pointer"></i>
+                  </a>
+              </li>
+              <li class="hidden-xs">
+                  <a ng-click="" title="123">
+                      <i class="icon icon-layers"></i>
+                  </a>
+              </li>
+              <li class="hidden-xs">
+                  <a ng-click="" title="123">
+                      <i class="fa fa-stack-overflow"></i>
+                  </a>
+              </li>
+              <li class="hidden-xs">
+                  <a ng-click="pan()" title="123">
+                      <i class="fa  fa-hand-o-up"></i>
+                  </a>
+              </li>
+              <li class="hidden-xs">
+                  <a ng-click="zoom_in()" title="123">
+                      <i class="icon icon-magnifier-add"></i>
+                  </a>
+              </li>
+              <li class="hidden-xs">
+                  <a ng-click="zoom_out()" title="123">
+                      <i class="icon icon-magnifier-remove"></i>
+                  </a>
+              </li>
+              <li class="hidden-xs">
+                  <a ng-click="prevView()" title="123">
+                      <i class="icon icon-arrow-left"></i>
+                  </a>
+              </li>
+              <li class="hidden-xs">
+                  <a ng-click="lastView()">
+                      <i class="icon icon-arrow-right"></i>
+                  </a>
+              </li>
+          </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="hidden-xs">
             <a ui-fullscreen></a>
