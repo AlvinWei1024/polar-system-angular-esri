@@ -1,7 +1,7 @@
 [
   {
     "id":1,
-    "name":"物理海洋调查",
+    "name":"南极周边海域",
     "type":"ptv",
     "description":"",
     "icon":"glyphicon-stats text-primary-dker",
@@ -9,7 +9,7 @@
     "child":[
       {
         "id":11,
-        "name":"物理海洋调查_1",
+        "name":"南极周边海域",
         "type":"ptv",
         "description":"",
         "icon":"",
@@ -17,16 +17,16 @@
         "child":[
           {
             "id":111,
-            "name":"物理海洋调查_11",
+            "name":"物理海洋和海洋气象考察",
             "type":"ptv",
             "description":"",
             "icon":"",
-            "selected":true,
+            "selected":false,
             "child":[]
           },
           {
             "id":112,
-            "name":"物理海洋调查_12",
+            "name":"海洋地质初步考察与研究",
             "type":"ptv",
             "description":"",
             "icon":"",
@@ -37,7 +37,7 @@
       },
       {
         "id":12,
-        "name":"物理海洋调查_2",
+        "name":"南极大陆周边",
         "type":"ptv",
         "description":"",
         "icon":"",
@@ -58,7 +58,7 @@
     "child":[
       {
         "id":12,
-        "name":"物理海洋调查_12",
+        "name":"南极大陆周边",
         "type":"ptv",
         "description":"",
         "icon":"",
@@ -66,7 +66,7 @@
         "child":[
           {
             "id":121,
-            "name":"物理海洋调查_121",
+            "name":"站基生物生态环境本底考察",
             "type":"ptv",
             "description":"",
             "icon":"",
@@ -75,7 +75,7 @@
           },
           {
             "id":122,
-            "name":"物理海洋调查_122",
+            "name":"冰盖断面及格罗夫山综合考察与冰穹A深冰芯钻探",
             "type":"ptv",
             "description":"",
             "icon":"",
@@ -86,7 +86,7 @@
       },
       {
         "id":122,
-        "name":"物理海洋调查_122",
+        "name":"大气、空间环境及天文观测",
         "type":"ptv",
         "description":"",
         "icon":"",
@@ -107,7 +107,7 @@
     "child":[
       {
         "id":31,
-        "name":"物理海洋调查_12",
+        "name":"海洋地质考察",
         "type":"ptv",
         "description":"",
         "icon":"",
@@ -115,7 +115,7 @@
         "child":[
           {
             "id":311,
-            "name":"物理海洋调查_121",
+            "name":"物理海洋和海洋气象考察",
             "type":"ptv",
             "description":"",
             "icon":"",
@@ -124,7 +124,7 @@
           },
           {
             "id":312,
-            "name":"物理海洋调查_122",
+            "name":"海洋地质考察",
             "type":"ptv",
             "description":"",
             "icon":"",
@@ -135,7 +135,7 @@
       },
       {
         "id":32,
-        "name":"物理海洋调查_122",
+        "name":"地球物理考察",
         "type":"ptv",
         "description":"",
         "icon":"",

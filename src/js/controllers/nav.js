@@ -6,13 +6,6 @@
 angular.module("app")
     .controller('navCtrl',["$scope","$http",function($scope,$http){
         var treeViewData=[{
-            "id":111,
-            "name":"物理海洋调查_11",
-            "type":"ptv",
-            "description":"",
-            "icon":"",
-            "selected":true,
-            "child":[]
         }];
         $http.get('js/data/treeView.json').success(function (result) {
             treeViewData=result;
