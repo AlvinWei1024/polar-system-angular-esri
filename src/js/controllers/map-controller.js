@@ -1,7 +1,6 @@
 /**
  * Created by alvinWei on 15/5/13.
  */
-
 app.controller('MapController', ['$scope','esri_map',function ($scope,esri_map) {
         var mapHeight=document.body.clientHeight-50;//minus header's height 50
         $scope.mapHeight=mapHeight;
@@ -16,7 +15,6 @@ app.controller('MapController', ['$scope','esri_map',function ($scope,esri_map) 
             zoom: 5,
             basemap: "topo"
         })
-
 
         console.log(esri_map)
     }
