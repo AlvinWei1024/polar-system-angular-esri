@@ -1,95 +1,96 @@
-      <!-- navbar header -->
-      <div class="navbar-header hide1 {{app.settings.navbarHeaderColor}} nav-logo">
-        <button class="pull-right visible-xs dk" ui-toggle-class="show" data-target=".navbar-collapse">
-          <i class="glyphicon glyphicon-cog"></i>
-        </button>
-        <button class="pull-right visible-xs" ui-toggle-class="off-screen" data-target=".app-aside" ui-scroll="app">
-          <i class="glyphicon glyphicon-align-justify"></i>
-        </button>
-        <!-- brand -->
-        <a href="#/" class="navbar-brand text-lt">
-            <img src="img/cpe.png" alt="." class="map-logo-{{app.settings.asideFolded}}">
-        </a>
-          <a  class="hidden-folded">
-              <span style="font-size: large">{{app.name}}</span>
-          </a>
-        <!-- / brand -->
-      </div>
-      <!-- / navbar header -->
-      <!-- navbar collapse -->
-      <div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}">
-        <!-- buttons -->
-        <div class="nav navbar-nav hidden-xs">
-          <a href class="btn no-shadow navbar-btn" ng-click="app.settings.asideFolded = !app.settings.asideFolded">
+<!-- navbar header -->
+<div class="navbar-header hide1 {{app.settings.navbarHeaderColor}} nav-logo">
+    <button class="pull-right visible-xs dk" ui-toggle-class="show" data-target=".navbar-collapse">
+        <i class="glyphicon glyphicon-cog"></i>
+    </button>
+    <button class="pull-right visible-xs" ui-toggle-class="off-screen" data-target=".app-aside" ui-scroll="app">
+        <i class="glyphicon glyphicon-align-justify"></i>
+    </button>
+    <!-- brand -->
+    <a href="#/" class="navbar-brand text-lt">
+        <img src="img/cpe.png" alt="." class="map-logo-{{app.settings.asideFolded}}">
+    </a>
+    <a class="hidden-folded">
+        <span style="font-size: large">{{app.name}}</span>
+    </a>
+    <!-- / brand -->
+</div>
+<!-- / navbar header -->
+<!-- navbar collapse -->
+<div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}">
+    <!-- buttons -->
+    <div class="nav navbar-nav hidden-xs">
+        <a href class="btn no-shadow navbar-btn" ng-click="app.settings.asideFolded = !app.settings.asideFolded">
             <i class="fa {{app.settings.asideFolded ? 'fa-indent' : 'fa-dedent'}} fa-fw"></i>
         </a>
-          <a href class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
+        <a href class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
             <i class="icon-user fa-fw"></i>
-          </a>
-        </div>
-        <!-- search form -->
-        <form class="navbar-form navbar-form-sm navbar-right shift" ui-shift="prependTo" target=".navbar-collapse" role="search">
-          <div class="form-group" >
+        </a>
+    </div>
+    <!-- search form -->
+    <form class="navbar-form navbar-form-sm navbar-right shift" ui-shift="prependTo" target=".navbar-collapse"
+          role="search">
+        <div class="form-group">
             <div class="input-group">
-              <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8"
-                     class="form-control input-sm bg-light no-border rounded padder" placeholder="搜索">
+                <input type="text" ng-model="selected"
+                       typeahead="state for state in states | filter:$viewValue | limitTo:8"
+                       class="form-control input-sm bg-light no-border rounded padder" placeholder="搜索">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
               </span>
             </div>
-          </div>
-        </form>
-        <!-- / search form -->
+        </div>
+    </form>
+    <!-- / search form -->
 
-        <!-- nabar right -->
-          <ul class="nav navbar-nav navbar-right" ng-controller="mapOptionCtrl">
-              <li class="hidden-xs">
-                  <a ng-click="" title="123">
-                      <i class="icon icon-pointer"></i>
-                  </a>
-              </li>
-              <li class="hidden-xs">
-                  <a ng-click="" title="123">
-                      <i class="icon icon-layers"></i>
-                  </a>
-              </li>
-              <li class="hidden-xs">
-                  <a ng-click="" title="123">
-                      <i class="fa fa-stack-overflow"></i>
-                  </a>
-              </li>
-              <li class="hidden-xs">
-                  <a ng-click="pan()" title="123">
-                      <i class="fa  fa-hand-o-up"></i>
-                  </a>
-              </li>
-              <li class="hidden-xs">
-                  <a ng-click="zoom_in()" title="123">
-                      <i class="icon icon-magnifier-add"></i>
-                  </a>
-              </li>
-              <li class="hidden-xs">
-                  <a ng-click="zoom_out()" title="123">
-                      <i class="icon icon-magnifier-remove"></i>
-                  </a>
-              </li>
-              <li class="hidden-xs">
-                  <a ng-click="prevView()" title="123">
-                      <i class="icon icon-arrow-left"></i>
-                  </a>
-              </li>
-              <li class="hidden-xs">
-                  <a ng-click="lastView()">
-                      <i class="icon icon-arrow-right"></i>
-                  </a>
-              </li>
-          </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="hidden-xs">
+    <!-- nabar right -->
+
+    <ul class="nav navbar-nav navbar-right">
+        <li class="hidden-xs">
             <a ui-fullscreen></a>
-          </li>
-        </ul>
-        <!-- / navbar right -->
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" ng-controller="mapOptionCtrl">
+        <li class="hidden-xs">
+            <a ng-click="" title="123">
+                <i class="icon icon-pointer"></i>
+            </a>
+        </li>
+        <li class="hidden-xs">
+            <a ng-click="" title="123">
+                <i class="icon icon-layers"></i>
+            </a>
+        </li>
+        <li measurement-tool>
+            <!--<a measurement-tool ng-click="" title="123"></a>-->
+        </li>
+        <li class="hidden-xs">
+            <a ng-click="pan()" title="123">
+                <i class="fa  fa-hand-o-up"></i>
+            </a>
+        </li>
+        <li class="hidden-xs">
+            <a ng-click="zoom_in()" title="123">
+                <i class="icon icon-magnifier-add"></i>
+            </a>
+        </li>
+        <li class="hidden-xs">
+            <a ng-click="zoom_out()" title="123">
+                <i class="icon icon-magnifier-remove"></i>
+            </a>
+        </li>
+        <li class="hidden-xs">
+            <a ng-click="prevView()" title="123">
+                <i class="icon icon-arrow-left"></i>
+            </a>
+        </li>
+        <li class="hidden-xs">
+            <a ng-click="lastView()">
+                <i class="icon icon-arrow-right"></i>
+            </a>
+        </li>
+    </ul>
+    <!-- / navbar right -->
 
-      </div>
-      <!-- / navbar collapse -->
+</div>
+<!-- / navbar collapse -->

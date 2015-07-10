@@ -34,6 +34,7 @@ angular.module('app')
                                   //'js/services/esri.map.js'
                                   ,'js/controllers/map-controller.js'
                                   ,'js/controllers/map.option.controller.js'
+                                  ,'js/directives/measurement.js'
                                   ]).then(
                                   function(){
                                       //return $ocLazyLoad.load('js/app/map/load-map-controller.js');

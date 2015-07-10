@@ -6,7 +6,7 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
     this.map;
     var mapDeferred = $q.defer();
     var navToolbar;
-    require(['esri/map'], function(Map, arcgisUtils){
+    require(['esri/map'], function(Map){
         self.createMap=function(eleID,mapOptions){
             if(self.map){
                 throw new Error('The map has been created, you can not create another map. The map id is "'+this.map.id+'"');
@@ -71,10 +71,31 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
 
     //on(navToolbar, "ExtentHistoryChange", extentHistoryChangeHandler);
     function extentHistoryChangeHandler() {
-        alert(1)
+
         //$("#map_zoomprev").disabled = self.navToolbar.isFirstExtent();
         //$("#map_zoomnext").disabled = self.navToolbar.isLastExtent();
     }
+    this.measurement=undefined;
+    mapDeferred.promise.then(function(map){
+        require(["esri/dijit/Measurement","esri/units"],function(Measurement,Units){
+            self.createMeasurement=function(measureId){
+                //console.log(angular.element("#"+measureId));
+                if(!angular.element("#"+measureId)[0]){
+                    throw new Error('You must provide a element with id: "'+measureId+'"');
+                }
+                else {
+                    self.measurement = new Measurement({
+                        map: self.map,
+                        defaultAreaUnit: Units.SQUARE_MILES,
+                        defaultLengthUnit: Units.KILOMETERS
+                    }, angular.element("#"+measureId)[0].childNodes[0]);
+                    self.measurement.startup()
+                }
+            }
+
+
+        })
+    });
 
 
 
