@@ -89,6 +89,25 @@ ul.nav > li > ul.nav > li > a.auto {
         display: block;
     }
 }
+
+
+
+
+.draw-tool{
+    color: #000000!important;
+}
+.draw-tool > li > div{
+    width: 250px;
+    margin: 5px;
+}
+.draw-tool > li > div > div{
+    margin: 10px;
+}
+.draw-tool > li >  div >a >span,
+.draw-tool > li >  div >a >span >a >span{
+    width: 25px;
+    height: 25px
+}
 .dijitMenuPopup{
     z-index: 9001!important;
 }
@@ -96,5 +115,58 @@ ul.nav > li > ul.nav > li > a.auto {
     border-radius: 10px;
     border-radius: 2px;
     /*background: #90ccf5;*/
+
+}
+.polyline_{
+    margin: 4px;
+    background-image: url(../img/mapappbiuder/polyline.png);
+    background-size: 25px;
+}
+.polygon_{
+    margin: 4px;
+    background-image: url(../img/mapappbiuder/polygon.png);
+    background-size: 25px;
+}
+.freehand_polygon_{
+    margin: 4px;
+    background-image: url(../img/mapappbiuder/freehand_polygon.png);
+    background-size: 25px;
+}
+.circle_{
+    margin: 4px;
+    background-image: url(../img/mapappbiuder/circle.png);
+    background-size: 25px;
+}
+.rectangle_{
+    margin: 4px;
+    background-image: url(../img/mapappbiuder/extent.png);
+    background-size: 25px;
+}
+.ellipse_{
+    margin: 4px;
+    background-image: url(../img/mapappbiuder/ellipse.png);
+    background-size: 25px;
+}
+.arrow_{
+    margin: 4px;
+    background-image: url(../img/mapappbiuder/up1.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+.graghics_clear_{
+    margin: 4px;
+    background-image: url(../img/mapappbiuder/editor_delete.png);
+    background-size: 25px;
+}
+
+.polyline_:hover,
+.polygon_:hover,
+.freehand_polygon_:hover,
+.circle_:hover,
+.rectangle_:hover,
+.ellipse_:hover,
+.arrow_:hover,
+.graghics_clear_:hover{
+    opacity: 0.7;
 
 }

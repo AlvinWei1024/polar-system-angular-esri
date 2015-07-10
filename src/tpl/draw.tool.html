@@ -1,0 +1,63 @@
+<li class="hidden-xs" ng-class={dropdown:true,open:isOpen}>
+    <a data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true"  ng-click="open()" title="地图测量">
+        <i class="fa fa-pencil-square-o"></i>
+    </a>
+    <ul class="dropdown-menu draw-tool" role="menu">
+        <li><a>地图标注</a></li>
+        <li class="divider"></li>
+        <li>
+            <div>
+                <div>选择地图标注类型:</div>
+                <a  id="POLYLINE">
+                    <span class="fa polyline_">
+                        <a title="POLYLINE">
+                            <span></span>
+                        </a>
+                    </span>
+                </a>
+                <a id="POLYGON">
+                    <span class="fa polygon_">
+                        <a title="POLYGON">
+                            <span></span>
+                        </a>
+                    </span>
+                </a>
+                <a id="CIRCLE">
+                    <span class="fa circle_">
+                        <a title="CIRCLE">
+                            <span></span>
+                        </a>
+                    </span>
+                </a>
+                <a id="RECTANGLE">
+                    <span class="fa rectangle_">
+                        <a  title="RECTANGLE">
+                            <span></span>
+                        </a>
+                    </span>
+                </a>
+                <a id="ELLIPSE">
+                    <span class="fa ellipse_">
+                        <a  title="ELLIPSE$">
+                            <span></span>
+                        </a>
+                    </span>
+                </a>
+                <a id="ARROW">
+                    <span class="fa arrow_">
+                        <a title="ARROW">
+                            <span></span>
+                        </a>
+                    </span>
+                </a>
+                <a id="GRAGHICS_CLEAR">
+                    <span class="fa graghics_clear_">
+                        <a href="javascript:void(0)" title="RECTANGLE">
+                            <span></span>
+                        </a>
+                    </span>
+                </a>
+            </div>
+        </li>
+    </ul>
+</li>
