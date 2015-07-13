@@ -52,40 +52,45 @@
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-controller="mapOptionCtrl">
         <li class="hidden-xs">
-            <a ng-click="" title="123">
+            <a ng-click="" title="定位">
                 <i class="icon icon-pointer"></i>
             </a>
         </li>
         <li class="hidden-xs">
-            <a ng-click="" title="123">
+            <a ng-click="" title="底图选择">
                 <i class="icon icon-layers"></i>
             </a>
         </li>
         <li draw-tool></li>
         <li measurement-tool></li>
         <li class="hidden-xs">
-            <a ng-click="pan()" title="123">
+            <a ng-click="pan()" title="拖动模式">
                 <i class="fa  fa-hand-o-up"></i>
             </a>
         </li>
         <li class="hidden-xs">
-            <a ng-click="zoom_in()" title="123">
+            <a ng-click="zoom_in()" title="放大模式">
                 <i class="icon icon-magnifier-add"></i>
             </a>
         </li>
         <li class="hidden-xs">
-            <a ng-click="zoom_out()" title="123">
+            <a ng-click="zoom_out()" title="缩小模式">
                 <i class="icon icon-magnifier-remove"></i>
             </a>
         </li>
         <li class="hidden-xs">
-            <a ng-click="prevView()" title="123">
+            <a ng-click="prevView()" title="上一视图">
                 <i class="icon icon-arrow-left"></i>
             </a>
         </li>
         <li class="hidden-xs">
-            <a ng-click="lastView()">
+            <a ng-click="lastView()" title="下一视图">
                 <i class="icon icon-arrow-right"></i>
+            </a>
+        </li>
+        <li class="hidden-xs">
+            <a ng-click="fullExtent()" title="默认视图">
+                <i class="icon icon-globe"></i>
             </a>
         </li>
     </ul>

@@ -6,6 +6,17 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
     this.map;
     var mapDeferred = $q.defer();
     var navToolbar;
+
+
+    require(["esri/basemaps"], function (esriBasemaps){
+        self.basmaps=esriBasemaps.delorme = {
+            baseMapLayers: [{url: "http://services.arcgisonline.com/ArcGIS/rest/services/Specialty/DeLorme_World_Base_Map/MapServer"}
+            ],
+            thumbnailUrl: "http://servername.fqdn.suffix/images/thumbnail_2014-11-25_61051.png",
+            title: "Delorme"
+        };
+    });
+
     require(['esri/map'], function(Map){
         self.createMap=function(eleID,mapOptions){
             if(self.map){
@@ -23,7 +34,6 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
                 }
             }
         }
-
     });
     this.navToolbar=undefined;
     mapDeferred.promise.then(function(map){
@@ -50,6 +60,10 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
                             }
                             case 'pan':{
                                 self.navToolbar.activate(Navigation.PAN);
+                                return;
+                            }
+                            case 'full_extent':{
+                                map.centerAndZoom(esri.geometry.Point(120, 31.5),5);
                                 return;
                             }
                             default:{

@@ -11,7 +11,7 @@ app.controller('MapController', ['$scope','esri_map',function ($scope,esri_map) 
             $scope.mapStyle={height:$scope.mapHeight+"px"};
         });
         esri_map.createMap("map",{
-            center: [-118, 34.5],
+            center: [120, 31.5],
             zoom: 5,
             basemap: "topo"
         })
