@@ -96,6 +96,9 @@ ul.nav > li > ul.nav > li > a.auto {
 .draw-tool{
     color: #000000!important;
 }
+.draw-tool > :first-child{
+    margin: 15px;
+}
 .draw-tool > li > div{
     width: 250px;
     margin: 5px;

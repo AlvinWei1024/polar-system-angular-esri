@@ -99,4 +99,85 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
 
 
 
+    mapDeferred.promise.then(function(map){
+        require(["esri/toolbars/draw", "esri/graphic","esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol", "esri/symbols/SimpleFillSymbol"],
+            function(Draw,Graphic,SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol){
+                self.toolbar = new Draw(map);
+                self.toolbar.on("draw-end", addToMap);
+                function addToMap(evt) {
+                    var symbol;
+                    self.toolbar.deactivate();
+                    map.showZoomSlider();
+                    switch (evt.geometry.type) {
+                        case "point":
+                        case "multipoint":
+                            symbol = new SimpleMarkerSymbol();
+                            break;
+                        case "polyline":
+                            symbol = new SimpleLineSymbol();
+                            break;
+                        default:
+                            symbol = new SimpleFillSymbol();
+                            break;
+                    }
+                    var graphic = new Graphic(evt.geometry, symbol);
+                    map.graphics.add(graphic);
+                }
+                self.toolbar.activeTool=function(type){
+                    if(typeof type!='string'){
+                        throw new Error("Draw type should be a string");
+                    }
+                    switch (type.toUpperCase()){
+                        case 'POLYLINE':{
+                            self.toolbar.activate(Draw.POLYLINE);
+                            map.hideZoomSlider();
+                            break;
+                        }
+                        case 'POLYGON':{
+                            self.toolbar.activate(Draw.POLYGON);
+                            map.hideZoomSlider();
+                            break;
+                        }
+                        case 'CIRCLE':{
+                            self.toolbar.activate(Draw.CIRCLE);
+                            map.hideZoomSlider();
+                            break;
+                        }
+                        case 'RECTANGLE':{
+                            self.toolbar.activate(Draw.RECTANGLE);
+                            map.hideZoomSlider();
+                            break;
+                        }
+                        case 'ELLIPSE':{
+                            self.toolbar.activate(Draw.ELLIPSE);
+                            map.hideZoomSlider();
+                            break;
+                        }
+                        case 'ARROW':{
+                            self.toolbar.activate(Draw.ARROW);
+                            map.hideZoomSlider();
+                            break;
+                        }
+                        case 'GRAGHICS_CLEAR':{
+                            try {
+                                map.graphics.clear();
+                            }
+                            catch (e) {
+                                console.log(e)
+                            }
+                            finally{
+                                break;
+                            }
+                        }
+                        default:
+                            throw new Error("Draw type should be a string: POLYLINE, POLYGON, CIRCLE, RECTANGLE, ELLIPSE, ARROW, GRAGHICS_CLEAR");
+                    }
+                }
+            });
+
+
+    })
+
+
+
 });

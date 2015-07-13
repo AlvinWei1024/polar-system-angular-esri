@@ -11,11 +11,11 @@ app.directive('drawTool',['esri_map',function(esriMap){
             scope.isOpen=false;
             scope.open=function(){
                 scope.isOpen=!scope.isOpen;
-                if(scope.isOpen){
-                    
-                }
-                else{
-
+            }
+            scope.activieDrawTool=function(e){
+                var t=e.target;
+                if(t.getAttribute('name')=='draw-tool'){
+                    esriMap.toolbar.activeTool(t.id);
                 }
             }
         }
