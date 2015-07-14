@@ -56,13 +56,9 @@
                 <i class="icon icon-pointer"></i>
             </a>
         </li>
-        <li class="hidden-xs">
-            <a ng-click="" title="底图选择">
-                <i class="icon icon-layers"></i>
-            </a>
-        </li>
+        <li basemap-gallery="" id="esriBasemapGallery"></li>
         <li draw-tool></li>
-        <li measurement-tool></li>
+        <li measurement-tool id="measurement_dijit"></li>
         <li class="hidden-xs">
             <a ng-click="pan()" title="拖动模式">
                 <i class="fa  fa-hand-o-up"></i>
@@ -90,7 +86,7 @@
         </li>
         <li class="hidden-xs">
             <a ng-click="fullExtent()" title="默认视图">
-                <i class="icon icon-globe"></i>
+                <i class="fa fa-globe"></i>
             </a>
         </li>
     </ul>

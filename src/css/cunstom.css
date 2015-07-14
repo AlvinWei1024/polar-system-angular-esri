@@ -111,6 +111,29 @@ ul.nav > li > ul.nav > li > a.auto {
     width: 25px;
     height: 25px
 }
+
+.esri-basemap-gallery{
+    width: 260px;
+    color: #000000!important;
+}
+.esri-basemap-gallery > :first-child{
+    margin: 15px;
+}
+.esri-basemap-gallery > li{
+
+    max-height: 206px;overflow: auto;
+}
+.measurement_dijit .esriMeasurement .dijitButtonNode,
+.measurement_dijit .esriMeasurement .esriButtonHover .dijitButtonNode,
+.measurement_dijit .esriMeasurement .esriButtonChecked .dijitButtonNode{
+    height: 32px;
+}
+
+.measurement_dijit .esriMeasurementButtonContainer{
+    margin-left: 20px;
+}
+
+
 .dijitMenuPopup{
     z-index: 9001!important;
 }
@@ -119,6 +142,9 @@ ul.nav > li > ul.nav > li > a.auto {
     border-radius: 2px;
     /*background: #90ccf5;*/
 
+}
+.dijitMenuPopup .esriMeasurementTableContainer{
+    padding: 5px;
 }
 .polyline_{
     margin: 4px;
@@ -172,4 +198,8 @@ ul.nav > li > ul.nav > li > a.auto {
 .graghics_clear_:hover{
     opacity: 0.7;
 
+}
+.esriBasemapGallerySelectedNode .esriBasemapGalleryThumbnail {
+    border: 2px solid #F99;
+    margin: 1px!important;
 }

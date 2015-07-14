@@ -6,15 +6,45 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
     this.map;
     var mapDeferred = $q.defer();
     var navToolbar;
+    require(["esri/dijit/BasemapGallery","esri/dijit/Basemap","esri/dijit/BasemapLayer"], function (BasemapGallery,Basemap,BasemapLayer){
 
+        self.setBaseMapGallery=function(object,eleId){
+            if(!object.length){
+                throw new Error('basemaps requst is null');
+            }
+            else{
+                var basemaps = [];
+                angular.forEach(object,function(value){
+                    var baseLayers=[];
+                    angular.forEach(value.layers,function(layerUrl){
+                        var basmapLayer=new BasemapLayer({
+                            url:layerUrl
+                            //isReference:true
+                        });
+                        baseLayers.push(basmapLayer);
+                    });
+                    var tempBasemap = new Basemap({
+                        layers: baseLayers,
+                        title: value.title,
+                        thumbnailUrl: value.thumbnailUrl
+                    });
+                    basemaps.push(tempBasemap);
+                });
+                self.basemapGallery = new BasemapGallery({
+                    showArcGISBasemaps: false,
+                    map: self.map,
+                    basemaps:basemaps
+                }, eleId);
+                //self.basemapGallery.on("selection-change",function(){
+                //    //console.log(self.map.spatialReference)
+                //    //self.map.spatialReference=new esri.SpatialReference(102100);
+                //    //console.log(self.map.spatialReference)
+                //    var basemap = self.basemapGallery.getSelected();
+                //    console.log(basemap)
+                //})
 
-    require(["esri/basemaps"], function (esriBasemaps){
-        self.basmaps=esriBasemaps.delorme = {
-            baseMapLayers: [{url: "http://services.arcgisonline.com/ArcGIS/rest/services/Specialty/DeLorme_World_Base_Map/MapServer"}
-            ],
-            thumbnailUrl: "http://servername.fqdn.suffix/images/thumbnail_2014-11-25_61051.png",
-            title: "Delorme"
-        };
+            }
+        }
     });
 
     require(['esri/map'], function(Map){
@@ -98,6 +128,9 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
                     throw new Error('You must provide a element with id: "'+measureId+'"');
                 }
                 else {
+                    if(!angular.element("#"+measureId)[0].childNodes[0]){
+                        angular.element("#measurement_dijit").html('<div></div>')
+                    }
                     self.measurement = new Measurement({
                         map: self.map,
                         defaultAreaUnit: Units.SQUARE_MILES,
