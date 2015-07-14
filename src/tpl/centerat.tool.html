@@ -1,0 +1,22 @@
+<li class="hidden-xs" ng-class={dropdown:true,open:isOpen}>
+    <a data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true" ng-click="open()" title="坐标定位">
+        <i class="icon icon-pointer"></i>
+    </a>
+    <ul class="dropdown-menu" role="menu" style="width: 303px;color: #000000!important;">
+        <li><a onclick="javascript:void(0)">坐标定位</a></li>
+        <li class="divider"></li>
+        <div class="locationForm">
+            <div>
+                <label>经度：</label>
+                <input placeholder="请输入经度" ng-model="lot"/>
+                <a  ng-click="deleteClick()" class="btn  btn-default " type="submit"> 清除    <i class="fa fa-close"></i></a>
+                <!--<i class="fa fa-times"></i>-->
+            </div>
+            <div>
+                <label>纬度：</label>
+                <input placeholder="请输入纬度" ng-model="lat" />
+                <a ng-click="submitClick()" class="btn  btn-default" type="submit"> 定位 <i class="icon icon-pointer"></i></a>
+            </div>
+        </div>
+    </ul>
+</li>

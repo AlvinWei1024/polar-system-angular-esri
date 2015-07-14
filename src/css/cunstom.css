@@ -128,11 +128,23 @@ ul.nav > li > ul.nav > li > a.auto {
 .measurement_dijit .esriMeasurement .esriButtonChecked .dijitButtonNode{
     height: 32px;
 }
-
 .measurement_dijit .esriMeasurementButtonContainer{
     margin-left: 20px;
 }
 
+.locationForm{
+    margin: 10px;
+}
+.locationForm div{
+    margin: 5px 0 5px 5px;
+}
+.locationForm div input{
+    height: 32px;
+}
+.locationForm div a{
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
 
 .dijitMenuPopup{
     z-index: 9001!important;

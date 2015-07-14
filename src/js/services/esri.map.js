@@ -143,9 +143,6 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
 
         })
     });
-
-
-
     mapDeferred.promise.then(function(map){
         require(["esri/toolbars/draw", "esri/graphic","esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol", "esri/symbols/SimpleFillSymbol"],
             function(Draw,Graphic,SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol){
@@ -221,7 +218,25 @@ angular.module('esri',[]).service('esri_map',function($timeout,$q){
                     }
                 }
             });
+    })
 
+    this.centerAt=undefined;
+    mapDeferred.promise.then(function(map){
+        require(["esri/geometry/Point","esri/symbols/PictureMarkerSymbol",
+            "esri/Color", "esri/graphic"],function(Point,PictureMarkerSymbol,Color,Graphic){
+            var graphic = '';
+            self.centerAt=function(lot,lat){
+                if(graphic !== ''){
+                    map.graphics.remove(graphic);
+                }
+                var mapPoint =  new Point([lot,lat]);
+                var pictureMarkerSymbol = new PictureMarkerSymbol('img/mksymbol.png',29,42);
+                map.centerAt(mapPoint);
+                graphic = new Graphic(mapPoint,pictureMarkerSymbol)
+                map.graphics.add(graphic);
+            }
+
+        })
 
     })
 
