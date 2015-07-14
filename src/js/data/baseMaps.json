@@ -1,0 +1,26 @@
+[
+  {
+    "index":4,
+    "title":"Delorme",
+    "thumbnailUrl":"http://localhost:8000/src/img/basemap-gallery/v.png",
+    "layers":["http://services.arcgisonline.com/ArcGIS/rest/services/Specialty/DeLorme_World_Base_Map/MapServer"]
+  },
+  {
+    "index":3,
+    "title":"World_Topo_Map",
+    "thumbnailUrl":"http://localhost:8000/src/img/basemap-gallery/ocean.png",
+    "layers":["http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer"]
+  },
+  {
+    "index":1,
+    "title":"World_Physical_Map",
+    "thumbnailUrl":"http://localhost:8000/src/img/basemap-gallery/b.jpg",
+    "layers":["http://services.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer"]
+  },
+  {
+    "index":2,
+    "title":"World_Imagery",
+    "thumbnailUrl":"http://localhost:8000/src/img/basemap-gallery/tempimagery.jpg",
+    "layers":["http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer"]
+  }
+]

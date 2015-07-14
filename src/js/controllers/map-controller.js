@@ -12,10 +12,8 @@ app.controller('MapController', ['$scope','esri_map',function ($scope,esri_map) 
         });
         esri_map.createMap("map",{
             center: [120, 31.5],
-            zoom: 5,
-            basemap: "topo"
+            zoom: 5
+            //,basemap: "topo"
         })
-
-        console.log(esri_map)
     }
 ]);

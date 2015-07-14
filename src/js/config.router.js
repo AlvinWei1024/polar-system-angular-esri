@@ -32,6 +32,7 @@ angular.module('app')
                               //return $ocLazyLoad.load('js/app/map/map-controller.js');
                               return uiLoad.load( [
                                   //'js/services/esri.map.js'
+                                  'js/directives/esri-basemap-gallery.js'
                                   ,'js/controllers/map-controller.js'
                                   ,'js/controllers/map.option.controller.js'
                                   ,'js/directives/measurement.js'
